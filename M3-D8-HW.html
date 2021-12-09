@@ -16,7 +16,7 @@
       crossorigin="anonymous"
     />
 
-    <title>Hello, world!</title>
+    <title>Strivazon</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -36,33 +36,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >Home <span class="sr-only">(current)</span></a
+            <a class="nav-link" href="/front.html"
+              >Front Page <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
+            <a class="nav-link" href="/back.html">Back Office Page</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -85,26 +64,30 @@
           <input type="text" class="form-control" id="name" />
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Description: </label>
+          <label for="description">Description: </label>
           <input type="text" class="form-control" id="description" />
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Image URL: </label>
+          <label for="imgUrl">Image URL: </label>
           <input type="text" class="form-control" id="imgUrl" />
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Brand: </label>
+          <label for="brand">Brand: </label>
           <input type="text" class="form-control" id="brand" />
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Price: </label>
-          <input type="text" class="form-control" id="price" />
+          <label for="price">Price: </label>
+          <input type="number" class="form-control" id="price" />
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
-    <table></table>
+    <div class="container">
+      <h1 class="mt-5">Products</h1>
+      <hr />
+      <div class="card-columns"></div>
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

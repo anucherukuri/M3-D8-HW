@@ -21,7 +21,7 @@ const handleSubmit = async(event) => {
         brand: document.getElementById("brand").value,
         price: document.getElementById("price").value
             }
-            fetch(url,{ 
+            await fetch(url,{ 
                 method: "POST",
                 body: JSON.stringify(myEvent),
                 headers:{
@@ -31,6 +31,7 @@ const handleSubmit = async(event) => {
             })
             .catch(error => console.log("error", error))
 }
+//GET PRODUCTS
 const getProducts =  async() => { 
     const response = await fetch(url,{ 
                 method: "GET",
@@ -43,5 +44,44 @@ const getProducts =  async() => {
             console.log(response)
             const products = await response.json() 
             console.log(products)
-            return products
+            const container = document.querySelector(".card-columns")
+   
+    products.forEach((prod)=> {
+        container.innerHTML += 
+        ` <div class="card" onclick="setData(${prod})">
+                <div class="card-body">
+        ${prod.name}
+            </div>
+            </div>`
+
+    })
+return products
+}
+
+let setData = (prod) => {
+    console.log(prod)
+    // document.querySelector("#name").innerHTML = prod.name
+}
+//UPDATE PRODUCTS
+    const editProducts =  async() => { 
+    const response = await fetch(url,{ 
+                body: "",
+                method: "PUT",
+                headers:{
+                    "Content-Type" : "application/json",
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjdmYjRjZmY1ZjAwMTU5MGJkY2UiLCJpYXQiOjE2Mzg5NzEzODcsImV4cCI6MTY0MDE4MDk4N30.ui1gZNkTLs9yfR-O_2ZCX7z7ctAFsq-zJ8PdeGpBTng"
+                        }
+            })
+            
+        }
+//DELETE PRODUCTS
+        const deleteProducts =  async() => { 
+    const response = await fetch(url,{ 
+                method: "DELETE",
+                headers:{
+                    "Content-Type" : "application/json",
+                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWIwYjdmYjRjZmY1ZjAwMTU5MGJkY2UiLCJpYXQiOjE2Mzg5NzEzODcsImV4cCI6MTY0MDE4MDk4N30.ui1gZNkTLs9yfR-O_2ZCX7z7ctAFsq-zJ8PdeGpBTng"
+                        }
+            })
+           
         }
